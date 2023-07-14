@@ -23,7 +23,7 @@
 
 
 <!-- Header -->
-<nav class="navbar navbar-expand-lg bg-dark shadow">
+<nav class="navbar navbar-expand-lg bg-light shadow">
     <div class="container d-flex justify-content-between align-items-center">
         
 

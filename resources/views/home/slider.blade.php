@@ -1,5 +1,5 @@
 <!-- Start Slider Hero -->
-<div class="owl-carousel owl-theme">
+<div class="home-slider owl-carousel owl-theme">
     <div class="slide slide-1">
         <div class="slide-content ">
             <h1>Ege Tahin Helvaya Hoşgeldiniz</h1>
@@ -38,7 +38,7 @@
 <!-- Custom Javascript -->
 <script>
     $(document).ready(function () {
-        $(".owl-carousel").owlCarousel({
+        $(".home-slider").owlCarousel({
             items:1,
             loop:true,
             nav:true,

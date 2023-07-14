@@ -113,8 +113,7 @@
                     <button type="submit" class="btn btn-success btn-lg" aa-review-submit">Gönder</button>
                 </form>
             </div>
-        </div>
-                            
+        </div>        
     </div>
 </section>
 <!-- Close tek ürün -->

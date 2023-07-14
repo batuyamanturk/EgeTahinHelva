@@ -44,7 +44,7 @@
                         <a class="nav-link" href="{{ route('aboutus') }}">Hakkımızda</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('categoryproducts',['id'=>4,'slug'=>"Helva"]) }}">Ürünlerimiz</a>
+                        <a class="nav-link" href="{{ route('categoryproducts',['id'=>2,'slug'=>"Helva"]) }}">Ürünlerimiz</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{{ route('contact') }}">İletişim</a>

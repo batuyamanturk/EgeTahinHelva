@@ -51,8 +51,6 @@
 
                         <h6>Ürün Detayı:</h6>
                         <p>{{ $data->detail }}</p>
-
-                        <form action="" method="GET">
                             <input type="hidden" name="product-title" value="Activewear">
                             <div class="row">
                                 <div class="col-auto">
@@ -71,15 +69,11 @@
                                 <div class="col d-grid">
                                     <button type="submit" class="btn btn-success btn-lg" name="submit" value="buy">Satın Al</button>
                                 </div>
-                                <div class="col d-grid">
-                                    <button type="submit" class="btn btn-success btn-lg" name="submit" value="addtocard">Sepete Ekle</button>
-                                </div>
                             </div>
-                        </form>
-
                     </div>
                 </div>
             </div>
+           
         </div>
     </div>
 </section>

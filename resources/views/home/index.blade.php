@@ -3,7 +3,7 @@
 @section('keywords',$settings->keywords)
 @section('description',$settings->description)
 @section('content')
-    @include("home.slider")
+    
     <!-- Start Categories of The Month -->
     <section class="container py-5">
         <div class="row text-center pt-3">

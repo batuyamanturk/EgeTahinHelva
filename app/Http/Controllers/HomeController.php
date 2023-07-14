@@ -22,12 +22,12 @@ class HomeController extends Controller
         $settings = Settings::first();
         $categorylist=Category::where('status','Stokta var')->get();
         $gallery = Gallery::limit(3)->get();
-        $slider = Slider::limit(3)->get();
+       
         return view('home.index',[
             'categorylist'=>$categorylist,
             'settings'=>$settings,
             'gallery'=>$gallery,
-            'slider'=>$slider
+            
         ]);
     }
     

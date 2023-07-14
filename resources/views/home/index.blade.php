@@ -3,15 +3,19 @@
 @section('keywords',$settings->keywords)
 @section('description',$settings->description)
 @section('content')
-    
-    <!-- Start Categories of The Month -->
-    <section class="container py-5">
+ 
+
+
+@include('home.slider')
+
+
+    <!-- Start Categories-->
+    <section class="container py-5 bg-light">
         <div class="row text-center pt-3">
             <div class="col-lg-6 m-auto">
                 <h1 class="h1">Ürün Kategorilerimiz</h1>
             </div>
         </div>
-        
         <div class="row">
             @foreach ($categorylist as $rs)
             <div class="col-12 col-md-4 p-5 mt-3">
@@ -26,10 +30,9 @@
             @endforeach
         </div>
     </section>
-    <!-- End Categories of The Month -->
+    <!-- End Categories -->
 
-
-    
+    <!-- Start Gallery-->
     <section class="bg-light">
         <div class="container  py-5">
             <div class="row text-center py-3">
@@ -55,10 +58,8 @@
                 </div>
                 @endforeach
             </div>
-            
         </div>
     </section>
+    <!-- End Gallery-->
  
-
-
 @endsection

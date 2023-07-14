@@ -68,7 +68,7 @@ return [
     | the locations of the links and the values should be their targets.
     |
     */
-        public_path('images') => storage_path('app/images'),
+        public_path('storage') => storage_path('app/public'),
 
     
 ];

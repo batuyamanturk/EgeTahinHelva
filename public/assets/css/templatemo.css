@@ -52,14 +52,16 @@ body, ul, li, p, a, label, input, div {
 /* General */
 .logo { font-weight: 500 !important;}
 .text-warning {  color: #ede861 !important;}
-.text-logorengi {  color: rgb(216, 183, 99) !important;}
+.text-logorengi {  color: #f9b417 !important;}
 .text-muted { color: #bcbcbc !important;}
 .text-success { color: #59ab6e !important;}
 .text-light { color: #cfd6e1 !important;}
 .bg-dark { background-color: #212934 !important;}
 .bg-light { background-color: #e9eef5 !important;}
+.bg-muted {color: #bcbcbc !important;}
 .bg-black { background-color: #1d242d !important;}
 .bg-success { background-color: #59ab6e !important;}
+
 .btn-success {
   background-color: #59ab6e !important;
   border-color: #56ae6c !important;

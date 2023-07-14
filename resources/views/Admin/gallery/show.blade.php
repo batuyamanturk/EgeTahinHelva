@@ -64,8 +64,11 @@
                         </tr>
                         <tr>
                             <th style="width: 200px;">Resim</th>
-                            <td>@if ($data->image)
-                                    <img src="{{Storage::url($data->image)}}" style="height:150px">
+                            <td>
+                                @if ($data->extension == "Video")
+                                    <video src="{{Storage::url($data->image)}}" style="height:150px">
+                                @else
+                                <img src="{{Storage::url($data->image)}}" style="height:150px >
                                 @endif
                             </td>
                         </tr>

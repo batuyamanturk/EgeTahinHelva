@@ -5,7 +5,7 @@
 
             <div class="col-md-4 pt-5">
                 <h2 class="h2 text-logorengi border-bottom pb-3 border-light logo">Ege Tahin Helva</h2>
-                <ul class="list-unstyled text-light footer-link-list">
+                <ul class="list-unstyled text-logorengi footer-link-list">
                     <li>
                         <i class="fas fa-map-marker-alt fa-fw"></i>
                         Koşukavak, 4246. Sk. No:26/A, 35080 
@@ -17,27 +17,27 @@
                     </li>
                     <li>
                         <i class="fa fa-envelope fa-fw"></i>
-                        <a class="text-decoration-none" href="mailto:egetahinhelva@gmail.com">egetahinhelva@gmail.com</a>
+                        <a class="text-decoration-none text-logorengi" href="mailto:egetahinhelva@gmail.com">egetahinhelva@gmail.com</a>
                     </li>
                 </ul>
             </div>
             <div class="col-md-4 pt-5">
-                <h2 class="h2 text-light border-bottom pb-3 border-light">Ürünlerimiz</h2>
+                <h2 class="h2 text-logorengi border-bottom pb-3 border-light">Ürünlerimiz</h2>
                 @foreach ($categorylist as $rs)
                 <ul class="list-unstyled text-light footer-link-list">
-                    <li><a class="text-decoration-none" href="{{route('categoryproducts',['id'=>$rs->id,'slug'=>$rs->title])}}">{{ $rs->title }}</a></li>
+                    <li><a class="text-decoration-none text-logorengi" href="{{route('categoryproducts',['id'=>$rs->id,'slug'=>$rs->title])}}">{{ $rs->title }}</a></li>
                 </ul>
                 @endforeach
             </div>
           
-            <div class="col-md-4 pt-5">
-                <h2 class="h2 text-light border-bottom pb-3 border-light">Menü</h2>
-                <ul class="list-unstyled text-light footer-link-list">
-                    <li><a class="text-decoration-none" href="{{ route('home') }}">Ana Sayfa</a></li>
-                    <li><a class="text-decoration-none" href="{{ route('aboutus') }}">Hakkımızda</a></li>
-                    <li><a class="text-decoration-none" href="{{ route('categoryproducts',['id'=>4,'slug'=>"Helva"]) }}">Ürünlerimiz</a></li>
-                    <li><a class="text-decoration-none" href="{{ route('contact') }}">İletişim</a></li>
-                    <li><a class="text-decoration-none" href="{{ route('gallery') }}">Galeri</a></li>
+            <div class="col-md-4 pt-5 text-logorengi">
+                <h2 class="h2 text-logorengi border-bottom pb-3 border-light ">Menü</h2>
+                <ul class="list-unstyled text-logorengi footer-link-list ">
+                    <li><a class="text-decoration-none text-logorengi" href="{{ route('home') }}">Ana Sayfa</a></li>
+                    <li><a class="text-decoration-none text-logorengi" href="{{ route('aboutus') }}">Hakkımızda</a></li>
+                    <li><a class="text-decoration-none text-logorengi" href="{{ route('categoryproducts',['id'=>4,'slug'=>"Helva"]) }}">Ürünlerimiz</a></li>
+                    <li><a class="text-decoration-none text-logorengi" href="{{ route('contact') }}">İletişim</a></li>
+                    <li><a class="text-decoration-none text-logorengi" href="{{ route('gallery') }}">Galeri</a></li>
                 </ul>
             </div>
 
@@ -69,9 +69,9 @@
         <div class="container">
             <div class="row pt-2">
                 <div class="col-12">
-                    <p class="text-center text-light">
+                    <p class="text-center text-logorengi">
                         2023 Ege Tahin Helva 
-                        | Designed by <a rel="sponsored"  target="_blank">Batuhan Yamantürk</a>
+                        | Designed by Batuhan Yamantürk
                     </p>
                 </div>
             </div>

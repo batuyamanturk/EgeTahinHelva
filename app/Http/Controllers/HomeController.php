@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Category;
+use App\Models\Comment;
 use App\Models\Gallery;
 use App\Models\Message;
 use App\Models\Product;
@@ -13,6 +14,7 @@ use Illuminate\Routing\Route;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Schema;
+use PhpParser\Node\Expr\New_;
 
 class HomeController extends Controller
 {
@@ -58,12 +60,27 @@ class HomeController extends Controller
         $categorylist=Category::where('status','Stokta var')->get();
         $data = Product::find($id);
         $categoryname = Category::where('id',$data->parent_id)->get();
+        $comment = Comment::where('product_id',$id)->where('admin_note','Göster')->get();
+        
         return view('home.product.product',[
             'data'=>$data,
             'categorylist'=>$categorylist,
             'categoryname'=>$categoryname,
-            'settings'=>$settings
+            'settings'=>$settings,
+            'comment'=>$comment
         ]);
+    }
+    
+    public function comment(Request $request) 
+    {
+        $data = New Comment();
+        $data->name = $request->name;
+        $data->comment = $request->comment;
+        $data->product_id = $request->id;
+        $id = $request->id;
+        $data->save();
+        return redirect()->back();
+        
     }
 
     public function aboutus()

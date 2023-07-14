@@ -10,12 +10,12 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1>Galeri</h1>
+            <h1>Yorumlar</h1>
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="{{ route('admin.index') }}">Anasayfa</a></li>
-              <li class="breadcrumb-item active">Galeri</li>
+              <li class="breadcrumb-item active">Yorumlar</li>
             </ol>
           </div>
         </div>
@@ -28,7 +28,7 @@
       <!-- Default box -->
       <div class="card">
         <div class="card-header">
-          <h3 class="card-title">Resimler</h3>
+          <h3 class="card-title">Yorumlar</h3>
 
           <div class="card-tools">
             <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
@@ -41,17 +41,16 @@
         </div>
         <div class="card-body">
             <div class="row mt">
-                <a href="{{route('admin.gallery.create')}}"><button type="button" class="btn btn-primary btn-lg">Resim Ekle</button></a>
-            </div>
-            <div class="row mt">
                 <div class="col-lg-12">
                     <table class="table table-bordered">
                         <thead>
                         <tr>
                             <th style="width: 10px">Id</th>
-                            <th>Başlığı</th>
-                            <th>Resim</th>
-                            <th style="width: 40px">Detaylı Göster</th>
+                            <th>İsim</th>
+                            <th>Yorum</th>
+                            <th>Yorum Yapılan Ürün</th>
+                            <th>Admin Onayı</th>
+                            <th style="width: 40px">İncele</th>
                             <th style="width: 40px">Sil</th>
                         </tr>
                         </thead>
@@ -59,18 +58,19 @@
                             @foreach($data as $rs)
                             <tr>
                                 <td>{{$rs->id}}</td>
-                                <td>{{$rs->title}}</td>
-                                <td>
-                                    @if($rs->extension == "Video")
-                                        <video src="{{Storage::url($rs->image)}}" style="height: 40px";>
-                                    @else
-                                        <img src="{{Storage::url($rs->image)}}" style="height: 40px";>
-                                    @endif
-
+                                <td>{{$rs->name}}</td>
+                                <td>{{$rs->comment}}</td>
+                                <td>{{$rs->product->title }}</td>
+                                <td>{{$rs->admin_note}}</td>
+                                <td> 
+                                    <a href="{{route('admin.comment.edit',['id'=>$rs->id])}}" class="btn btn-success btn-sm">Onayla</a>
                                 </td>
-                                <td><a href="{{route('admin.gallery.show',['id'=>$rs->id])}}" class="btn btn-success btn-sm">Göster</a></td>
-                                <td><a href="{{route('admin.gallery.destroy',['id'=>$rs->id])}}" class="btn btn-danger btn-sm"
-                                       onclick="return confirm('Silmek istediğinize emin misiniz?')">Sil</a></td>
+                                <td>
+                                    <a href="{{route('admin.comment.destroy',['id'=>$rs->id])}}" class="btn btn-danger btn-sm"
+                                       onclick="return confirm('Silmek istediğinize emin misiniz?')">
+                                       Sil
+                                    </a>
+                                </td>
                             </tr>
                             @endforeach
                         </tbody>

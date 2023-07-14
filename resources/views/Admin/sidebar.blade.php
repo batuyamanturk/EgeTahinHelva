@@ -66,10 +66,10 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="{{ route('admin.slider.index') }}" class="nav-link">
+            <a href="{{ route('admin.comment.index') }}" class="nav-link">
               <i class="nav-icon fas fa-image"></i>
               <p>
-                Slayt Resimleri
+                Yorumlar
               </p>
             </a>
           </li>

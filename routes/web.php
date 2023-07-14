@@ -7,7 +7,7 @@ use App\Http\Controllers\AdminPanel\AdminCategoryController;
 use App\Http\Controllers\AdminPanel\AdminGalleryController;
 use App\Http\Controllers\AdminPanel\AdminMessageController;
 use App\Http\Controllers\AdminPanel\AdminProductController;
-use App\Http\Controllers\AdminPanel\AdminSliderController;
+use App\Http\Controllers\AdminPanel\AdminCommentController;
 
 /*
 |--------------------------------------------------------------------------
@@ -27,6 +27,7 @@ Route::get('/gallery',[HomeController::class,'gallery'])->name('gallery');
 Route::get('/categoryproducts/{id}/{slug}',[HomeController::class,'categoryproducts'])->name('categoryproducts');
 Route::get('/product/{id}',[HomeController::class,'product'])->name('product');
 Route::post('/storemessage', [HomeController::class, 'storemessage'])->name('storemessage');
+Route::post('/comment', [HomeController::class, 'comment'])->name('comment');
 Route::get('/logoutuser',[HomeController::class,'logoutuser'])->name('logoutuser');
 //***********************HOME PAGE SEARCHBAR ROUTE ***************************/
 Route::post('/searchbarshow',[HomeController::class,'searchbarshow'])->name('searchbarshow');
@@ -73,12 +74,11 @@ Route::middleware('auth')->prefix('/admin')->name('admin.')->group(function () {
         Route::get('/show/{id}',  'show')->name('show');
         Route::get('/destroy/{id}',  'destroy')->name('destroy');
     });
-    //********************************ADMIN SLIDER ROUTES ****************************************************************
-    Route::prefix('/slider')->name('slider.')->controller(AdminSliderController::class)->group(function () {
+    //********************************ADMIN COMMENT ROUTES ****************************************************************
+    Route::prefix('/comment')->name('comment.')->controller(AdminCommentController::class)->group(function () {
         Route::get('/','index')->name('index');
-        Route::get('/create', 'create')->name('create');
-        Route::post('/store','store')->name('store');
-        Route::get('/show/{id}',  'show')->name('show');
+        Route::get('/edit/{id}','edit')->name('edit');
+        Route::post('/update/{id}','update')->name('update');
         Route::get('/destroy/{id}',  'destroy')->name('destroy');
     });
 });

@@ -73,8 +73,48 @@
                     </div>
                 </div>
             </div>
-           
         </div>
+        <div class="row">
+            <div class="col-lg-6 mt-5">
+                <h3> {{$data->title}} için yorumlar </h3>
+                @if (count($comment) == 0)
+                <p>Henüz bu ürün için yorum yapılmamıştır</p>
+                @else
+                <ul class="aa-review-nav">
+                    @foreach($comment as $rs)
+                    <li>
+                        <div class="">
+                            <div class="media-body">
+                                <h4 class="media-heading"><strong>{{$rs->name}}</strong> - <span>{{$rs->created_at}}</span></h4>
+                                <p>{{$rs->comment}}</p>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+                    @endforeach
+                @endif
+                
+            </div>
+            <div class="col-lg-6 mt-5">
+                <h3>Yorum yap</h3>
+                <form action="{{route('comment')}}" class="review-form"  role="form" method="post">
+                    @csrf
+                    <br>
+                    <input class="input" type="hidden" name="id" value="{{$data->id}}">
+                    <div class="form-group">
+                        <label for="name">Adınız</label>
+                        <input type="text" class="form-control" name="name"  placeholder="Adınız">
+                    </div>
+                    <br>
+                    <div class="form-group">
+                        <label for="message">Yorumunuz</label>
+                        <textarea class="form-control" rows="3"  name="comment" ></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-success btn-lg" aa-review-submit">Gönder</button>
+                </form>
+            </div>
+        </div>
+                            
     </div>
 </section>
 <!-- Close tek ürün -->

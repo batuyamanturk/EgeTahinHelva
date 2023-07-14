@@ -49,11 +49,11 @@
                             <div class="card-body">
                               <div class="form-group">
                                 <label for="title">Resim Başlığı</label>
-                                <input type="text" class="form-control" id="title" name="title" placeholder="Resim Başlığı">
+                                <input type="text" class="form-control" id="title" name="title" placeholder="Resim Başlığı" required>
                               </div>
                               <div class="form-group">
                                 <label for="extension">Görüntü türü</label>
-                                <select class="form-control" name="extension">
+                                <select class="form-control" name="extension" required>
                                   <option>Resim</option>
                                   <option>Video</option>
                               </select>
@@ -62,7 +62,7 @@
                                 <label for="image">Resimi</label>
                                 <div class="input-group">
                                   <div class="custom-file">
-                                    <input type="file" class="custom-file-input" id="image" name="image">
+                                    <input type="file" class="custom-file-input" id="image" name="image" required>
                                     <label class="custom-file-label" for="exampleInputFile">Resim Seç</label>
                                   </div>
                                 </div>
